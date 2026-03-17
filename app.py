@@ -3103,9 +3103,6 @@ def _in_streamlit_ctx():
 
 
 if __name__ == '__main__':
-    if _in_streamlit_ctx():
-        # Running via:  streamlit run FL03152025_Dashboard.py
-        dashboard_main()
-    else:
-        # Running via:  python FL03152025_Dashboard.py
-        main()
+    main()
+else:
+    dashboard_main()
