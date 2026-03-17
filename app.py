@@ -3102,7 +3102,8 @@ def _in_streamlit_ctx():
         return False
 
 
+dashboard_main()
+ 
 if __name__ == '__main__':
     main()
-else:
-    dashboard_main()
+ 
