@@ -3071,6 +3071,15 @@ def dashboard_main():
         key=f'scen_bar_{current_entity}',
     )
 
+    # ── Section 7: FL System Info link ───────────────────────────────────
+    st.markdown('---')
+    st.info(
+        'ℹ️ **FL System Information & Privacy Model** has moved to its own page.  \n'
+        'Use **📑 View → ℹ️ FL System Info** in the sidebar to view the full supply chain '
+        'structure, active weights, and privacy guarantees.',
+        icon=None,
+    )
+
     # ── Footer ────────────────────────────────────────────────────────────
     st.caption(
         f"FL ESG Risk Dashboard  |  {display_name} ({tier})  |  "
@@ -3102,8 +3111,10 @@ def _in_streamlit_ctx():
         return False
 
 
-dashboard_main()
- 
 if __name__ == '__main__':
-    main()
- 
+    if _in_streamlit_ctx():
+        # Running via:  streamlit run FL03152025_Dashboard.py
+        dashboard_main()
+    else:
+        # Running via:  python FL03152025_Dashboard.py
+        main()
